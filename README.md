@@ -52,7 +52,7 @@ After installations follow these steps to launch Uzima Dao:
 dfx start --clean --background # Run dfx in the background
 ```
 
-1. Then run these commands in your VS Code terminal:
+4. Then run these commands in your VS Code terminal:
 
 ```sh
 npm run setup # Install packages, deploy canisters, and generate type bindings
@@ -82,6 +82,15 @@ which facilitates frontend and backend interactions.
    ![Journaling](./readme-assests/img5.png)
 
 1. ![Final](./readme-assests/img6.png)
+
+You can also interact with the backedn canister alone using Candid UI. To do this, stop the Vite dev sever using `CTRL + c` or `CMD + C` on mac. Then stop the dfx sever as well by running `dfx stop'. Repeat process number four on [Setting up dev environment](#setting-up-dev-enviroment).
+Then the command below nad open the candid ui link in your browser.
+
+```sh
+dfx deploy backend
+```
+
+![CandiddUI](./readme-assests/Screenshot%202024-02-09%20at%2012.45.03.png)
 
 ## Technology Stack
 

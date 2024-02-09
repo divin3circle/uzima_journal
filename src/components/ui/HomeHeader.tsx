@@ -1,5 +1,6 @@
 import React from 'react';
 import { User } from '@junobuild/core';
+import toast from 'react-hot-toast';
 
 type Props = {
   user: User | null | undefined;
@@ -19,7 +20,7 @@ function HomeHeader({ user, showModal, setShowModal }: Props) {
                 Welcome Back,{' '}
                 <span
                   className="text-rose-500 font-bold cursor-pointer"
-                  onClick={() => alert(`Owner: ${user?.owner}`)}
+                  onClick={() => toast.success(`Owner: ${user?.owner}`)}
                 >
                   {user?.owner?.substring(0, 7)}...
                 </span>
@@ -31,7 +32,11 @@ function HomeHeader({ user, showModal, setShowModal }: Props) {
             </div>
 
             <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-              <a className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-500 transition hover:bg-gray-50 hover:text-gray-700 shadow-md">
+              <a
+                href="https://github.com/divin3circle"
+                target="_blank"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-500 transition hover:bg-gray-50 hover:text-gray-700 shadow-md"
+              >
                 <span className="text-sm font-medium"> Github </span>
 
                 <svg

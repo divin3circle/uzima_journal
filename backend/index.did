@@ -1,0 +1,14 @@
+type Journal = record { id : nat; title : text; body : text; time : text };
+type User = record {
+  id : text;
+  username : text;
+  journals : vec Journal;
+  totalJournals : nat;
+};
+service : () -> {
+  createJournal : (text, nat, text, text, text) -> (opt Journal);
+  createUser : (text, text) -> (User);
+  deleteJournal : (text, nat) -> (opt Journal);
+  getUser : (text) -> (opt User) query;
+  getUsers : () -> (vec User) query;
+}

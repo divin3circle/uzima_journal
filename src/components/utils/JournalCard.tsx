@@ -10,7 +10,7 @@ function JournalCard({ title, body, time, id }: Props) {
   const idNumber = Number(id);
   return (
     <div>
-      <article className="rounded-x p-2 bg-gray-50 shadow-md sm:p-6 lg:p-8">
+      <article className="rounded-x p-2 bg-gray-50 shadow-md sm:p-6 lg:p-8 min-h-[200px] max-h-[210px]">
         <div className="flex items-start sm:gap-8">
           <div
             className="hidden sm:grid sm:size-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-black"

@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 type Props = {
   title: string;
   body: string;
@@ -10,7 +11,14 @@ function JournalCard({ title, body, time, id }: Props) {
   const idNumber = Number(id);
   return (
     <div>
-      <article className="rounded-x p-2 bg-gray-50 shadow-md sm:p-6 lg:p-8 min-h-[200px] max-h-[210px]">
+      <article
+        className="rounded-x p-2 bg-gray-50 shadow-md sm:p-6 lg:p-8 min-h-[200px] max-h-[210px] cursor-pointer hover:scale-95 ease-in-out duration-300"
+        onClick={() =>
+          toast.success(
+            'Congrats🥳You found an easter egg. Watch out for more🎉',
+          )
+        }
+      >
         <div className="flex items-start sm:gap-8">
           <div
             className="hidden sm:grid sm:size-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-black"

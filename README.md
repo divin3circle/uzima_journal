@@ -36,15 +36,15 @@ Uzima Journal is a health journaling app that allows users to track and record t
 
 To interact with Uzima Journal locally ensure you have the following installed:
 
-1. NodeJs: `<https://nodejs.org/en/download``>
-2. DFX v0.15: `<https://internetcomputer.org/docs/current/references/cli-reference/dfx-parent``>
+1. NodeJs: `<https://nodejs.org/en/download`>
+2. DFX v0.15: `<https://internetcomputer.org/docs/current/references/cli-reference/dfx-parent`>
 3. Rust: `https://www.rust-lang.org/tools/install`
 
 ### Setting up dev enviroment
 
 After installations follow these steps to launch Uzima Dao:
 
-1. Fork the repository: `git clone https://github.com/divin3circle/uzima-journal.git`
+1. Fork the repository: `git clone https://github.com/divin3circle/uzima-journal`
 2. After forking the repository, clone your version of the repository to your local enviroment
 3. Open the repository in VS Code and run the follwowing command:
 

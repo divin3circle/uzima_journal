@@ -36,15 +36,15 @@ Uzima Journal is a health journaling app that allows users to track and record t
 
 To interact with Uzima Journal locally ensure you have the following installed:
 
-1. NodeJs: `<https://nodejs.org/en/download`>
-2. DFX v0.15: `<https://internetcomputer.org/docs/current/references/cli-reference/dfx-parent`>
+1. NodeJs: `https://nodejs.org/en/download`
+2. DFX v0.15: `https://internetcomputer.org/docs/current/references/cli-reference/dfx-parent`
 3. Rust: `https://www.rust-lang.org/tools/install`
 
 ### Setting up dev enviroment
 
 After installations follow these steps to launch Uzima Dao:
 
-1. Fork the repository: `git clone https://github.com/divin3circle/uzima-journal`
+1. Fork the repository: `https://github.com/divin3circle/uzima-journal`
 2. After forking the repository, clone your version of the repository to your local enviroment
 3. Open the repository in VS Code and run the follwowing command:
 
@@ -61,30 +61,35 @@ npm start # Start the development server
 
 `npm run setup` installs all the dependecies of Uzima Journal, deploys the frontend and backend canister to the testnet and generate the type bindings
 which facilitates frontend and backend interactions.
-`npm start`spins up the React development server
+`npm start` spins up the React development server
 
 ### Interacting with Uzima Journal
 
-1. Open your localhost via: `localhost:3000`. Click getstarted to be authenticated with your internet identity.
+1. Open your localhost via: `localhost:3000`. Click `Get Started` to be authenticated with your internet identity.
+
    ![Landingpage](./readme-assests/img1.png)
 
-1. Use you internet identity or create a new one:
+1. Use an existing internet identity or create a new one:
+
    ![Authentication](./readme-assests/img2.png)
 
 1. After your account has been created you will be logged in to the homepage. From here you can click on the rose-red text besids the `Welcome back` heading
-   on the to right. an alert will pop up showing your principal:
+   on the top right. An alert will pop up showing your principal:
+
    ![Home](./readme-assests/img3.png)
 
 1. To create a new journal, click on the `create new journal` button on the top left:
+
    ![Journal](./readme-assests/img4.png)
 
 1. Then hit save, an alert will promt you to refresh the page:
+
    ![Journaling](./readme-assests/img5.png)
 
 1. ![Final](./readme-assests/img6.png)
 
-You can also interact with the backedn canister alone using Candid UI. To do this, stop the Vite dev sever using `CTRL + c` or `CMD + C` on mac. Then stop the dfx sever as well by running `dfx stop'. Repeat process number four on [Setting up dev environment](#setting-up-dev-enviroment).
-Then the command below nad open the candid ui link in your browser.
+You can also interact with the backedn canister alone using Candid UI. To do this, stop the Vite dev sever using `CTRL + c` or `CMD + C` on mac. Then stop the dfx sever as well by running `dfx stop`. Repeat process number three on [Setting up dev environment](#setting-up-dev-enviroment).
+Then copy and paste the command below in your terminal and open the candid ui link in your browser.
 
 ```sh
 dfx deploy backend

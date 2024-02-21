@@ -63,6 +63,8 @@ npm start # Start the development server
 which facilitates frontend and backend interactions.
 `npm start` spins up the React development server
 
+### NOTE: REMEMBER TO RUN `dfx deploy backend` before opening the local server
+
 ### Interacting with Uzima Journal
 
 1. Open your localhost via: `localhost:3000`. Click `Get Started` to be authenticated with your internet identity.

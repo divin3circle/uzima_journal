@@ -9,12 +9,12 @@ import {
   Opt,
   Variant,
   Result,
+  nat32,
 } from 'azle';
 
 import {v4 as uuidv4 } from "uuid";
 
 type Journal = Record<{
-  id: nat;
   title: text;
   body: text;
   time: text;
@@ -64,7 +64,6 @@ export function getUser(id: text): Opt<User> {
 $update;
 export function createJournal(
   userId: text,
-  journalId: nat,
   title: text,
   body: text,
   time: text,
@@ -77,7 +76,6 @@ export function createJournal(
 
   const user = userOpt.Some;
   const journal: Journal = {
-    id: journalId,
     title,
     body,
     time,
@@ -94,25 +92,22 @@ export function createJournal(
 }
 
 $update;
-export function deleteJournal(userId: text, journalId: nat): Result<Journal, text> {
+export function deleteJournal(userId: text, journalId: nat32): Result<Journal, text> {
   const userOpt = users.get(userId);
   if ('None' in userOpt) {
     return Result.Err("User not found.");
   }
 
   const user = userOpt.Some;
-  const journalIndex = user.journals.findIndex(
-    (journal) => journal.id === journalId,
-  );
-  if (journalIndex === -1) {
-    return Result.Err("Journal not found.");;
+  if (user.journals.length >= journalId) {
+    return Result.Err("Id for journal doesn't point to an existing journal.");;
   }
 
-  const journal = user.journals[journalIndex];
+  const journal = user.journals[journalId];
   const updatedUser: User = {
     ...user,
     totalJournals: user.totalJournals - BigInt(1),
-    journals: user.journals.filter((journal) => journal.id !== journalId),
+    journals: user.journals.splice(journalId, 1),
   };
 
   users.insert(userId, updatedUser);

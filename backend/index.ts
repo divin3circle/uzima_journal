@@ -104,10 +104,11 @@ export function deleteJournal(userId: text, journalId: nat32): Result<Journal, t
   }
 
   const journal = user.journals[journalId];
+  user.journals.splice(journalId, 1);
   const updatedUser: User = {
     ...user,
     totalJournals: user.totalJournals - BigInt(1),
-    journals: user.journals.splice(journalId, 1),
+    journals: user.journals,
   };
 
   users.insert(userId, updatedUser);
